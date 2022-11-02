@@ -1,4 +1,4 @@
-# Example of customized shared keyboard with react-math-view 
+# Example of customized shared keyboard with `react-math-view` and `create-react-app`
 This is a simple example of how to implement a shared keyboard with a custom layout using the [react-math-view](https://github.com/arnog/react-mathlive) package in `create-react-app`. (If you are using NextJS, check out [this sample repo](https://github.com/hobo1618/next-math-view-app))
 
 **These instructions assume you've set up a react app with `create-react-app`**

@@ -59,4 +59,53 @@ function App() {
 export default App;
  ``` 
  
+ ## Customizing the virtual keyboard
+I recommend you first read through the official docs, which offer pretty clear examples of how to customize the keyboard. The only difficulty I faced was determining within which css selectors I should assign values to the css variables. The docs specify that: 
+
+> To customize the appearance of the virtual keyboard panel set the following CSS variables on a selector that applies to the container of the virtual keyboard panel, which is the <body> element by default:
+> ```css
+ > body {
+ > --keyboard-zindex: 3000;
+> }
+ >```
+ 
+However this doesn't seem to work in react. In the end I found the classnames of the virtualKeyboard's layers and assigned values to css variables there directly:
+ 
+ ```css
+ body {
+  /* this has no effect */
+  /* --keyboard-background: rgb(23, 23, 200); */
+}
+
+ /* this worked */
+.ML__keyboard--plate {
+  --keyboard-background: rgb(23, 23, 23);
+  --keyboard-text: rgb(230, 230, 230);
+  --keycap-background: rgb(40, 40, 40);
+  --keycap-text: rgb(230, 230, 230);
+  --keycap-background-border: rgb(20,20,20)
+  --keycap-background-active: rgb(30,30,30)
+}
+
+.action {
+  --keycap-modifier-background: rgb(100,100,100)
+}
+
+.keycap {
+  --keycap-text-active: rgb(23, 230, 23);
+  --keycap-background-active: rgb(100,100,100)
+}
+ 
+ ```
+
+ The rest was of the instructions in the docs worked perfectly, and the sample code above should be pretty self explanatory. 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
  
